@@ -67,8 +67,11 @@ tabBtns.forEach(btn => {
 // ===== Analytics events (GA4) =====
 (function(){
   document.addEventListener('click', function(e){
-    var a = e.target.closest && e.target.closest('a[href$=".pdf"]');
-    if (a && window.gtag) gtag('event','resume_download',{link_url:a.getAttribute('href'), page:location.pathname});
+    if (!e.target.closest) return;
+    var pdf = e.target.closest('a[href$=".pdf"]');
+    if (pdf && window.gtag) gtag('event','resume_download',{link_url:pdf.getAttribute('href'), page:location.pathname});
+    var contact = e.target.closest('a[href^="mailto:"], a[href^="tel:"]');
+    if (contact && window.gtag) gtag('event','contact_click',{method: contact.getAttribute('href').indexOf('mailto:')===0 ? 'email':'phone', link_url:contact.getAttribute('href'), page:location.pathname});
   });
   var hit={};
   window.addEventListener('scroll', function(){
