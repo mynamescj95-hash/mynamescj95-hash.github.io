@@ -63,3 +63,18 @@ tabBtns.forEach(btn => {
     });
   });
 });
+
+// ===== Analytics events (GA4) =====
+(function(){
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href$=".pdf"]');
+    if (a && window.gtag) gtag('event','resume_download',{link_url:a.getAttribute('href'), page:location.pathname});
+  });
+  var hit={};
+  window.addEventListener('scroll', function(){
+    var h=document.documentElement;
+    var height=(h.scrollHeight - h.clientHeight)||1;
+    var pct=Math.round(((h.scrollTop||document.body.scrollTop)/height)*100);
+    [25,50,75,100].forEach(function(t){ if(pct>=t && !hit[t]){ hit[t]=true; if(window.gtag) gtag('event','scroll_depth',{percent:t, page:location.pathname}); } });
+  }, {passive:true});
+})();
