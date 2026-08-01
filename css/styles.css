@@ -360,6 +360,9 @@ img { max-width: 100%; display: block; }
 .cs-gallery a { display:block; }
 .cs-gallery img { width:100%; height:auto; display:block; background:#222; }
 .cs-gallery figcaption { padding:12px 14px; font-size:.82rem; color:var(--muted); font-family:var(--ff-head); font-weight:600; text-transform:uppercase; letter-spacing:.05em; }
+.cs-gallery video { width:100%; height:auto; display:block; background:#000; }
+.cs-subhead { font-family:var(--ff-head); font-weight:700; text-transform:uppercase; letter-spacing:.08em; font-size:.9rem; color:var(--gold,#c8a24a); margin:48px 0 6px; }
+.cs-subhead-sub { color:var(--muted); font-size:.92rem; margin:0 0 4px; max-width:640px; }
 .cs-results .btn { width:100%; justify-content:center; margin-top:18px; }
 
 /* ---------- Reveal animation ---------- */
