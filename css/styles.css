@@ -362,6 +362,14 @@ img { max-width: 100%; display: block; }
 .cs-gallery figcaption { padding:12px 14px; font-size:.82rem; color:var(--muted); font-family:var(--ff-head); font-weight:600; text-transform:uppercase; letter-spacing:.05em; }
 .cs-gallery video { width:100%; height:auto; display:block; background:#000; }
 .cs-subhead { font-family:var(--ff-head); font-weight:700; text-transform:uppercase; letter-spacing:.08em; font-size:.9rem; color:var(--gold,#c8a24a); margin:48px 0 6px; }
+.cs-charts { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:20px; }
+.cs-chart { background:var(--white); border:1px solid var(--line); border-radius:12px; padding:14px 16px 12px; }
+.cs-chart h5 { font-family:var(--ff-head); margin:0; font-size:1rem; color:var(--ink); font-weight:600; }
+.cs-chart-delta { display:flex; align-items:baseline; gap:8px; margin-top:5px; }
+.cs-chart-delta .d { font-family:var(--ff-head); font-size:1.9rem; font-weight:700; line-height:1; color:var(--red); letter-spacing:-.02em; }
+.cs-chart-delta .dl { font-size:.68rem; color:var(--muted); text-transform:uppercase; letter-spacing:.07em; font-weight:600; }
+.cs-chart .ck { font-family:var(--ff-head); font-size:.74rem; font-weight:600; letter-spacing:.04em; color:var(--muted); margin-top:8px; }
+.cs-chart svg { width:100%; height:auto; display:block; margin-top:8px; }
 .cs-subhead-sub { color:var(--muted); font-size:.92rem; margin:0 0 4px; max-width:640px; }
 .cs-results .btn { width:100%; justify-content:center; margin-top:18px; }
 
