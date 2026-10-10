@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J3HHPB8EJG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J3HHPB8EJG');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Tierra Realty Project — Christopher Root</title>
+<meta name="description" content="How Christopher Root rebuilt La Tierra Realty's acquisition engine: a bilingual website on Netlify, a Google Ads rebuild that cut cost per lead from $174.73 to $19.30, GA4 and offline conversion tracking, Monday.com CRM integration, and a 40-post SEO program.">
+<link rel="canonical" href="https://christopherjroot.com/la-tierra-realty.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://christopherjroot.com/la-tierra-realty.html">
+<meta property="og:title" content="La Tierra Realty: Rebuilding a Land Company's Acquisition Engine">
+<meta property="og:description" content="Website rebuild, Google Ads, GA4, Search Console, Monday.com CRM and SEO for a Texas land company. Cost per lead down from $174.73 to $19.30.">
+<meta property="og:image" content="https://christopherjroot.com/assets/latierra/lp-desktop.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=2">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2322303f'/><text x='16' y='22' font-family='Poppins,sans-serif' font-size='16' font-weight='700' fill='%23a87c34' text-anchor='middle'>CR</text></svg>">
+<style>
+/* Project-page additions, built on the site's existing tokens */
+.proj-hero-meta { display:flex; flex-wrap:wrap; gap:10px 28px; margin-top:26px; font-size:.9rem; color:var(--muted-2); }
+.proj-hero-meta b { color:#fff; font-weight:600; }
+.proj-hero .btns { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+.kpis { background:var(--ink); color:#fff; padding:44px 0; }
+.kpi-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:28px 30px; }
+.kpi .v { font-family:var(--ff-head); font-weight:700; font-size:clamp(1.7rem,3.4vw,2.4rem); line-height:1.1; color:#fff; font-variant-numeric:tabular-nums; }
+.kpi .v span { color:var(--red); }
+.kpi .l { color:var(--muted-2); font-size:.86rem; margin-top:6px; }
+.kpi .s { color:#7f8a95; font-size:.74rem; margin-top:4px; }
+@media (max-width:820px){ .kpi-grid{ grid-template-columns:repeat(2,1fr); } }
+.overview { padding:64px 0 24px; }
+.overview-grid { display:grid; grid-template-columns:1.5fr 1fr; gap:40px; align-items:start; }
+.overview p { font-size:1.06rem; color:#2e2e2e; margin-bottom:16px; max-width:66ch; }
+.toc { background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:22px 24px; }
+.toc h4 { font-size:.8rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin-bottom:12px; }
+.toc ol { margin:0 0 0 20px; display:flex; flex-direction:column; gap:6px; font-size:.93rem; }
+.toc ol li::marker { color:var(--red); font-weight:700; }
+.toc a:hover { color:var(--red); }
+@media (max-width:920px){ .overview-grid{ grid-template-columns:1fr; } }
+.data-table-wrap { overflow-x:auto; background:var(--white); border:1px solid var(--line); border-radius:12px; margin-top:22px; }
+.data-table { width:100%; border-collapse:collapse; font-size:.9rem; font-variant-numeric:tabular-nums; min-width:640px; }
+.data-table th, .data-table td { padding:11px 14px; border-bottom:1px solid var(--line); text-align:right; white-space:nowrap; }
+.data-table th:first-child, .data-table td:first-child { text-align:left; }
+.data-table th { font-family:var(--ff-head); font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); background:var(--paper); font-weight:600; }
+.data-table tr:last-child td { border-bottom:0; }
+.data-table tr.total td { font-weight:700; background:var(--paper); }
+.data-table tr.muted td { color:var(--muted); }
+.table-note { font-size:.84rem; color:var(--muted); margin-top:10px; max-width:80ch; }
+.cs-block .stack { display:flex; flex-wrap:wrap; gap:8px; margin-top:4px; }
+.cs-block .stack span { background:var(--white); border:1px solid var(--line); border-radius:50px; padding:5px 12px; font-size:.8rem; color:#444; }
+.flow { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-top:24px; }
+.flow .step { background:var(--white); border:1px solid var(--line); border-radius:12px; padding:16px; position:relative; }
+.flow .step .n { font-family:var(--ff-head); font-weight:700; font-size:.75rem; color:var(--red); letter-spacing:.08em; }
+.flow .step h5 { font-family:var(--ff-head); font-size:.98rem; margin:4px 0 6px; }
+.flow .step p { font-size:.85rem; color:#555; line-height:1.5; }
+@media (max-width:920px){ .flow{ grid-template-columns:1fr 1fr; } }
+@media (max-width:520px){ .flow{ grid-template-columns:1fr; } }
+.funnel-bars { margin-top:22px; background:var(--white); border:1px solid var(--line); border-radius:12px; padding:20px; display:flex; flex-direction:column; gap:10px; }
+.fb { display:grid; grid-template-columns:minmax(120px,200px) 1fr; gap:12px; align-items:center; font-size:.9rem; }
+.fb .track { height:28px; background:var(--paper); border-radius:6px; overflow:hidden; }
+.fb .fill { height:100%; background:var(--ink); display:flex; align-items:center; justify-content:flex-end; padding-right:8px; color:#fff; font-family:var(--ff-head); font-weight:600; font-size:.82rem; min-width:34px; }
+.fb .fill.gold { background:var(--red); }
+@media (max-width:520px){ .fb{ grid-template-columns:1fr; gap:4px; } }
+.shot-pair { display:grid; grid-template-columns:2.2fr 1fr; gap:18px; margin-top:34px; align-items:start; }
+.shot-pair figure { margin:0; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
+.shot-pair figcaption { padding:12px 14px; font-size:.82rem; color:var(--muted); font-family:var(--ff-head); font-weight:600; text-transform:uppercase; letter-spacing:.05em; }
+@media (max-width:760px){ .shot-pair{ grid-template-columns:1fr; } }
+.lessons { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:26px; }
+.lesson { background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:22px; }
+.lesson h4 { font-size:1.02rem; margin-bottom:8px; }
+.lesson p { font-size:.94rem; color:#444; }
+@media (max-width:920px){ .lessons{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<nav class="nav scrolled" id="nav">
+  <div class="container nav-inner">
+    <a href="index.html#top" class="brand"><span class="dot"></span> Christopher Root <small>Growth Marketing</small></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#capabilities">What I Do</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="assets/Christopher_Root_Resume.pdf" download class="btn btn-primary">Resume</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="article-hero proj-hero">
+  <div class="container">
+    <a href="index.html#work" class="back-link">← Back to work</a>
+    <div class="eyebrow">Client Project · Real Estate · Full-Funnel Growth</div>
+    <h1>La Tierra Realty: Rebuilding a Land Company's Acquisition Engine</h1>
+    <p class="pmeta" style="font-size:1.02rem;max-width:760px;color:#c9c9c9;">La Tierra sells owner-financed, unrestricted acreage across Central Texas, often to Spanish-speaking buyers. I rebuilt how they get found, how they capture leads, and how they know which ads produce buyers: a new bilingual website, a Google Ads program rebuilt from zero, GA4 and offline conversion tracking, a Monday.com CRM pipeline, and a 40-post SEO program.</p>
+    <div class="proj-hero-meta">
+      <div><b>Role</b> Marketing lead, end to end</div>
+      <div><b>Channels</b> Google Ads · SEO · Meta · Email</div>
+      <div><b>Stack</b> Netlify · GA4 · GTM · Search Console · Monday.com</div>
+    </div>
+    <div class="btns">
+      <a href="https://latierratx.com/" target="_blank" rel="noopener" class="btn btn-primary">↗ Visit latierratx.com</a>
+      <a href="#ads" class="btn btn-ghost" style="border-color:rgba(255,255,255,.3);color:#fff;">See the Google Ads results</a>
+    </div>
+  </div>
+</header>
+
+<section class="kpis">
+  <div class="container kpi-grid">
+    <div class="kpi"><div class="v">$174.73 <span>→</span> $19.30</div><div class="l">Cost per lead, old vs rebuilt Google Ads</div><div class="s">About 9× cheaper · Aug 31 – Oct 8, 2026</div></div>
+    <div class="kpi"><div class="v">74</div><div class="l">Google Ads leads into the CRM in 3 weeks</div><div class="s">About $1.5K in spend · Sep 17 – Oct 8, 2026</div></div>
+    <div class="kpi"><div class="v">2.28% <span>→</span> 9.23%</div><div class="l">Click-through rate, old vs new program</div><div class="s">Avg. CPC $5.06 → $1.21</div></div>
+    <div class="kpi"><div class="v">7</div><div class="l">Search campaigns in the rebuilt program</div><div class="s">4 core + 3 property and market tests</div></div>
+    <div class="kpi"><div class="v">0 <span>→</span> 6</div><div class="l">Paid leads in the Qualified stage</div><div class="s">253 earlier paid leads had 0</div></div>
+    <div class="kpi"><div class="v">26<span>/</span>40</div><div class="l">Bilingual EN/ES blog posts live</div><div class="s">Each with Article and FAQ schema</div></div>
+    <div class="kpi"><div class="v">674</div><div class="l">Organic Google clicks, mid-Aug to early Oct</div><div class="s">Search Console · 49 pages indexed</div></div>
+    <div class="kpi"><div class="v">103</div><div class="l">301 redirects mapping the 123-URL Wix site</div><div class="s">No lost links at migration</div></div>
+  </div>
+</section>
+
+<section class="overview">
+  <div class="container overview-grid">
+    <div class="reveal">
+      <div class="cs-num">THE STARTING POINT</div>
+      <h2 style="font-size:clamp(1.6rem,3.5vw,2.3rem);margin:6px 0 16px;">Leads were coming in. None of the paid ones were turning into buyers.</h2>
+      <p>When I audited the account in September 2026, La Tierra had 253 leads tagged as Google Ads in Monday.com, and not one had ever reached Qualified. Paid leads were three times as likely to be marked Unqualified as the rest of the board (26.5% vs 8.3%). The old campaigns were paying $5.06 a click and $174.73 for each conversion, Google showed "Enhanced conversions not recording", and nothing connected an ad click to what happened in the CRM.</p>
+      <p>The website ran on Wix, the Spanish experience was thin for an audience that searches heavily in Spanish, and there was no way to tell which keyword, campaign or landing page produced a real buyer.</p>
+      <p>The work below covers the full chain: the site, tracking, ads, landing pages, CRM, reporting and content. Each piece feeds the next, so the ad platform optimizes toward leads that actually reach the sales team.</p>
+    </div>
+    <aside class="toc reveal">
+      <h4>On this page</h4>
+      <ol>
+        <li><a href="#website">Website rebuild and launch</a></li>
+        <li><a href="#tech-seo">Technical SEO and performance</a></li>
+        <li><a href="#tracking">GA4, GTM and offline conversions</a></li>
+        <li><a href="#ads">Google Ads rebuild</a></li>
+        <li><a href="#landing-pages">Keyword-matched landing pages</a></li>
+        <li><a href="#crm">Monday.com CRM integration</a></li>
+        <li><a href="#reporting">Funnel reporting</a></li>
+        <li><a href="#seo">SEO content program and Search Console</a></li>
+        <li><a href="#email">Email marketing</a></li>
+        <li><a href="#social">Earlier work: Meta, social and video</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+      </ol>
+    </aside>
+  </div>
+</section>
+
+<!-- ===== 01 WEBSITE ===== -->
+<section class="cs-section" id="website">
+  <div class="container">
+    <div class="reveal">
+      <div class="cs-num">WORKSTREAM 01</div>
+      <h2>Website Rebuild and Launch</h2>
+      <p class="sub">Moved latierratx.com off Wix onto a hand-coded, bilingual static site deployed from GitHub to Netlify, with serverless functions for lead capture.</p>
+    </div>
+    <div class="cs-cols">
+      <div class="reveal">
+        <div class="cs-block">
+          <h3>What I Built</h3>
+          <ul>
+            <li><strong>60+ live pages</strong>: 24 property listing pages, hubs for available, commercial and past projects, a 30-project sold portfolio, About, Contact, resources with 3 downloadable buyer guides, and a blog.</li>
+            <li><strong>Full English and Spanish.</strong> Every page switches language in place with a toggle or <code>?lang=es</code>, so Spanish-speaking buyers get the whole site, not a translated homepage.</li>
+            <li><strong>Find-your-lot tools</strong>: a property quiz, filters by region (Central, North, East Texas), sorting by price and acreage, and an interactive map of every property.</li>
+            <li><strong>Conversion paths on every page</strong>: a "Text Us" button, a call-back pop-up, newsletter capture, and an owner-financing payment calculator on each listing.</li>
+            <li><strong>Live lot availability.</strong> Listing pages read the sales team's Monday.com board and hide lots marked under contract or sold, refreshed every 10 minutes, so ads never send buyers to a lot that is gone.</li>
+            <li>Compliance pieces: TREC brokerage notices and the financing partner's NMLS disclosure.</li>
+          </ul>
+        </div>
+        <div class="cs-block">
+          <h3>Migration</h3>
+          <p>The old Wix sitemap had 123 URLs. I mapped every one to its new home with 103 permanent 301 redirects, plus clean URLs without <code>.html</code>. Sold and retired properties redirect to the past-projects portfolio instead of returning a 404, so links and search equity carry over.</p>
+        </div>
+      </div>
+      <aside class="cs-results reveal">
+        <h4>Scope</h4>
+        <div class="r"><div class="big">60+ pages</div><div class="lbl">Hand-coded, bilingual EN/ES</div></div>
+        <div class="r"><div class="big">24</div><div class="lbl">Property listing pages with product schema</div></div>
+        <div class="r"><div class="big">103</div><div class="lbl">301 redirects covering the 123-URL Wix site</div></div>
+        <div class="r"><div class="big">10 min</div><div class="lbl">Lot availability synced from the CRM</div></div>
+        <div class="cs-tags"><span>HTML/CSS/JS</span><span>Netlify</span><span>GitHub</span><span>Serverless Functions</span><span>Bilingual UX</span></div>
+      </aside>
+    </div>
+    <div class="cs-gallery reveal">
+      <figure><a href="assets/latierra/site-home.jpg" target="_blank" rel="noopener"><img src="assets/latierra/site-home.jpg" alt="La Tierra Realty homepage hero with stats and Find Your Lot button" loading="lazy"></a><figcaption>Homepage</figcaption></figure>
+      <figure><a href="assets/latierra/site-properties.jpg" target="_blank" rel="noopener"><img src="assets/latierra/site-properties.jpg" alt="Available properties page with a map of every property" loading="lazy"></a><figcaption>Available properties</figcaption></figure>
+      <figure><a href="assets/latierra/site-property.jpg" target="_blank" rel="noopener"><img src="assets/latierra/site-property.jpg" alt="Sandy Hill Farms listing page in Brenham, Texas" loading="lazy"></a><figcaption>Property listing</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 02 TECH SEO ===== -->
+<section class="cs-section" id="tech-seo">
+  <div class="container">
+    <div class="reveal">
+      <div class="cs-num">WORKSTREAM 02</div>
+      <h2>Technical SEO and Performance</h2>
+      <p class="sub">Built the site to load fast on phones and to be read correctly by Google and AI answer engines.</p>
+    </div>
+    <div class="cs-cols">
+      <div class="reveal">
+        <div class="cs-block">
+          <h3>Performance</h3>
+          <ul>
+            <li>All 175 images converted to WebP with descriptive, keyword-based file names.</li>
+            <li>The homepage hero is preloaded with high fetch priority and served at the right size per screen through Netlify's image CDN (480px to 2000px), and below-the-fold images lazy-load.</li>
+            <li>Images cache for a year as immutable assets, logos for a week.</li>
+          </ul>
+        </div>
+        <div class="cs-block">
+          <h3>Structured Data and Indexing</h3>
+          <ul>
+            <li>Schema on every page type: RealEstateAgent / LocalBusiness on the homepage, Product with offers on each property, Article, Organization and FAQPage on every blog post, plus breadcrumbs and collection pages.</li>
+            <li>Canonical tags, an XML sitemap (58 URLs and growing with each post), and robots rules that keep paid landing pages and draft content out of the index.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="cs-results reveal">
+        <h4>Built In</h4>
+        <div class="r"><div class="big">175</div><div class="lbl">Images converted to WebP</div></div>
+        <div class="r"><div class="big">Every page</div><div class="lbl">Has structured data for its type</div></div>
+        <div class="r"><div class="big">1 year</div><div class="lbl">Immutable image caching</div></div>
+        <div class="cs-tags"><span>Core Web Vitals</span><span>Schema.org</span><span>Image CDN</span><span>Sitemaps</span><span>Redirects</span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 03 TRACKING ===== -->
+<section class="cs-section" id="tracking">
+  <div class="container">
+    <div class="reveal">
+      <div class="cs-num">WORKSTREAM 03</div>
+      <h2>GA4, GTM and Offline Conversion Tracking</h2>
+      <p class="sub">Connected every ad click to the CRM record it became, then sent CRM outcomes back to Google Ads so bidding learns from real leads, not page loads.</p>
+    </div>
+    <div class="cs-cols">
+      <div class="reveal">
+        <div class="cs-block">
+          <h3>Capture</h3>
+          <ul>
+            <li>The site stores the Google click ID (gclid, wbraid, gbraid) and all UTM parameters for 90 days, along with the properties each visitor viewed, and attaches them to every form.</li>
+            <li>A consistent data layer fires events for leads, paid leads, quiz steps, the call-back pop-up and the Text Us button.</li>
+          </ul>
+        </div>
+        <div class="cs-block">
+          <h3>GTM and GA4</h3>
+          <ul>
+            <li>Set up the Google Tag Manager container: GA4, the conversion linker, GA4 lead and paid-lead events, and the Google Ads lead conversion with enhanced-conversion user data.</li>
+            <li>Registered 6 GA4 custom dimensions (keyword, campaign, lead type, form location, page language, property) and marked the lead events as key events, so reports split by language, property and keyword.</li>
+          </ul>
+        </div>
+        <div class="cs-block">
+          <h3>Server-Side Conversions</h3>
+          <p>During launch, one buyer's browser blocked the Google tag. The lead reached the CRM, but Google Ads never saw it. I moved conversion reporting to the server: each paid lead's click ID is written to a Google Sheet that Google Ads Data Manager imports daily as "Lead Created (CRM)". I also created a higher-value "Qualified Lead (CRM)" conversion fed from CRM stage changes, so bidding can move toward leads the sales team qualifies.</p>
+        </div>
+      </div>
+      <aside class="cs-results reveal">
+        <h4>Result</h4>
+        <div class="r"><div class="big">74.5 vs 74</div><div class="lbl">Google-reported leads vs CRM leads (Oct 8)</div></div>
+        <div class="r"><div class="big">6</div><div class="lbl">GA4 custom dimensions</div></div>
+        <div class="r"><div class="big">Ad-blocker proof</div><div class="lbl">Leads reported server-side</div></div>
+        <div class="cs-tags"><span>GA4</span><span>Google Tag Manager</span><span>Enhanced Conversions</span><span>Offline Conversion Import</span><span>Data Manager</span><span>Apps Script</span></div>
+      </aside>
+    </div>
+    <div class="flow reveal">
+      <div class="step"><div class="n">01</div><h5>Ad click</h5><p>The click ID and UTMs are captured on landing.</p></div>
+      <div class="step"><div class="n">02</div><h5>Form</h5><p>Name and phone first, then email, then property and timing.</p></div>
+      <div class="step"><div class="n">03</div><h5>Bot check</h5><p>Seven server checks before anything is written.</p></div>
+      <div class="step"><div class="n">04</div><h5>CRM</h5><p>Monday.com item with campaign, keyword, click ID and landing page.</p></div>
+      <div class="step"><div class="n">05</div><h5>Back to Google</h5><p>Lead and qualified-lead conversions imported for bidding.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 04 GOOGLE ADS ===== -->
+<section class="cs-section" id="ads">
+  <div class="container">
+    <div class="reveal">
+      <div class="cs-num">WORKSTREAM 04</div>
+      <h2>Google Ads Rebuild</h2>
+      <p class="sub">Paused the old campaigns and rebuilt the account from scratch around language, device and intent. Leads got about 9× cheaper, and the program produced its first lot contract within three weeks.</p>
+    </div>
+    <div class="cs-cols">
+      <div class="reveal">
+        <div class="cs-block">
+          <h3>Structure</h3>
+          <ul>
+            <li><strong>4 core Search campaigns</strong> split by language (English, Spanish) and device (desktop, mobile), so budgets and bids reflect how differently each audience behaves.</li>
+            <li><strong>68 ad groups</strong> in exact and phrase pairs across 136 keywords. Every exact keyword is also an exact-match negative in its phrase ad group, so each search is answered by the most specific ad.</li>
+            <li><strong>198 shared negative keywords</strong> (155 English, 43 Spanish), targeting limited to 23 Texas counties, and search partners, display and AI Max turned off.</li>
+            <li>Sitelinks in English and Spanish, logo and property images, and a tracking template that passes keyword, match type, device and ad group to every landing page.</li>
+            <li>Built in bulk with CSV uploads, then tuned live: CPC caps by device, budget shifted toward the campaigns producing leads, and North Texas and Brenham keyword sets added.</li>
+          </ul>
+        </div>
+        <div class="cs-block">
+          <h3>Property and Market Tests</h3>
+          <ul>
+            <li><strong>Pecan Peak Ranch:</strong> two dedicated campaigns for a single development near Granbury, geo-targeted to DFW and the surrounding counties, with the overlapping Granbury terms paused in the general campaigns.</li>
+            <li><strong>Eagle Ranch, San Antonio:</strong> a mobile test with 48 exact keywords across 12 cities from northeast San Antonio to Seguin, and its own landing page. It got a 10.7% click-through rate and 0 leads in 7 days, so I recommended pausing it and moving the budget to the campaigns that convert.</li>
+          </ul>
+        </div>
+        <div class="cs-block">
+          <h3>What the Data Said</h3>
+          <ul>
+            <li>Spanish mobile was the best campaign: 14.81% CTR, $0.78 CPC, about $10 per lead, the highest share of leads the sales team reached, and the source of the first contract.</li>
+            <li>The first two days ran at $11 per lead (6 leads, 10.8% CTR), against $166 per lead in the two weeks before.</li>
+            <li>Spanish desktop reached the $200 test threshold with no active prospects, so I recommended pausing it and moving the budget to mobile.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="cs-results reveal">
+        <h4>Results</h4>
+        <div class="r"><div class="big">$19.30</div><div class="lbl">Cost per lead, down from $174.73</div></div>
+        <div class="r"><div class="big">9.23%</div><div class="lbl">CTR, up from 2.28%</div></div>
+        <div class="r"><div class="big">$1.21</div><div class="lbl">Average CPC, down from $5.06</div></div>
+        <div class="r"><div class="big">74 leads</div><div class="lbl">In the first 3 weeks, about $1.5K in spend</div></div>
+        <div class="cs-tags"><span>Google Ads</span><span>Search</span><span>Bulk Editor</span><span>Keyword Planner</span><span>Spanish-language PPC</span><span>Geo Testing</span></div>
+      </aside>
+    </div>
+
+    <div class="cs-charts reveal" style="margin-top:34px;">
+      <div class="cs-chart">
+        <h5>Cost per lead</h5>
+        <div class="cs-chart-delta"><span class="d">−89%</span><span class="dl">old vs new</span></div>
+        <svg viewBox="0 0 300 92" role="img" aria-label="Cost per lead: old campaigns $174.73, new program $19.30">
+          <text x="0" y="16" font-size="11" fill="#6b6b6b" font-family="Inter,sans-serif">Old campaigns</text>
+          <rect x="0" y="22" width="300" height="18" rx="3" fill="#22303f"/><text x="294" y="35" font-size="11" fill="#ffffff" text-anchor="end" font-family="Poppins,sans-serif" font-weight="600">$174.73</text>
+          <text x="0" y="62" font-size="11" fill="#6b6b6b" font-family="Inter,sans-serif">Rebuilt program</text>
+          <rect x="0" y="68" width="33" height="18" rx="3" fill="#a87c34"/><text x="39" y="81" font-size="11" fill="#22303f" font-family="Poppins,sans-serif" font-weight="600">$19.30</text>
+        </svg>
+        <div class="ck">Aug 31 – Oct 8, 2026</div>
+      </div>
+      <div class="cs-chart">
+        <h5>Click-through rate</h5>
+        <div class="cs-chart-delta"><span class="d">4×</span><span class="dl">higher</span></div>
+        <svg viewBox="0 0 300 92" role="img" aria-label="CTR: old campaigns 2.28%, new program 9.23%">
+          <text x="0" y="16" font-size="11" fill="#6b6b6b" font-family="Inter,sans-serif">Old campaigns</text>
+          <rect x="0" y="22" width="74" height="18" rx="3" fill="#22303f"/><text x="80" y="35" font-size="11" fill="#22303f" font-family="Poppins,sans-serif" font-weight="600">2.28%</text>
+          <text x="0" y="62" font-size="11" fill="#6b6b6b" font-family="Inter,sans-serif">Rebuilt program</text>
+          <rect x="0" y="68" width="300" height="18" rx="3" fill="#a87c34"/><text x="294" y="81" font-size="11" fill="#ffffff" text-anchor="end" font-family="Poppins,sans-serif" font-weight="600">9.23%</text>
+        </svg>
+        <div class="ck">Aug 31 – Oct 8, 2026</div>
+      </div>
+      <div class="cs-chart">
+        <h5>Average cost per click</h5>
+        <div class="cs-chart-delta"><span class="d">−76%</span><span class="dl">old vs new</span></div>
+        <svg viewBox="0 0 300 92" role="img" aria-label="Average CPC: old campaigns $5.06, new program $1.21">
+          <text x="0" y="16" font-size="11" fill="#6b6b6b" font-family="Inter,sans-serif">Old campaigns</text>
+          <rect x="0" y="22" width="300" height="18" rx="3" fill="#22303f"/><text x="294" y="35" font-size="11" fill="#ffffff" text-anchor="end" font-family="Poppins,sans-serif" font-weight="600">$5.06</text>
+          <text x="0" y="62" font-size="11" fill="#6b6b6b" font-family="Inter,sans-serif">Rebuilt program</text>
+          <rect x="0" y="68" width="72" height="18" rx="3" fill="#a87c34"/><text x="78" y="81" font-size="11" fill="#22303f" font-family="Poppins,sans-serif" font-weight="600">$1.21</text>
+        </svg>
+        <div class="ck">Aug 31 – Oct 8, 2026</div>
+      </div>
+    </div>
+
+    <div class="data-table-wrap reveal">
+      <table class="data-table">
+        <thead><tr><th>Campaign</th><th>Clicks</th><th>CTR</th><th>Avg. CPC</th><th>Form leads</th><th>Cost / lead</th></tr></thead>
+        <tbody>
+          <tr><td>Spanish · mobile</td><td>281</td><td>14.81%</td><td>$0.78</td><td>20</td><td>$10.92</td></tr>
+          <tr><td>English · mobile</td><td>377</td><td>7.95%</td><td>$0.70</td><td>24.5</td><td>$10.75</td></tr>
+          <tr><td>English · desktop</td><td>293</td><td>7.89%</td><td>$1.39</td><td>21</td><td>$19.35</td></tr>
+          <tr><td>Spanish · desktop</td><td>60</td><td>23.35%</td><td>$3.46</td><td>5</td><td>$41.53</td></tr>
+          <tr><td>Pecan Peak · mobile</td><td>98</td><td>8.01%</td><td>$1.73</td><td>3</td><td>$56.57</td></tr>
+          <tr><td>Pecan Peak · desktop</td><td>39</td><td>5.92%</td><td>$2.34</td><td>1</td><td>$91.27</td></tr>
+          <tr><td>Eagle Ranch · mobile (test)</td><td>40</td><td>10.70%</td><td>$2.03</td><td>0</td><td>—</td></tr>
+          <tr class="total"><td>Rebuilt program</td><td>1,188</td><td>9.23%</td><td>$1.21</td><td>74.5</td><td>$19.30</td></tr>
+          <tr class="muted"><td>Old campaigns (paused)</td><td>69</td><td>2.28%</td><td>$5.06</td><td>2</td><td>$174.73</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note reveal">Google Ads data, Aug 31 – Oct 8, 2026. The rebuilt program launched Sep 16–17 and spent about $1.5K in this window. "Form leads" is Google's lead-form conversion; the CRM recorded 74 leads over the same period.</p>
+  </div>
+</section>
+
+<!-- ===== 05 LANDING PAGES ===== -->
+<section class="cs-section" id="landing-pages">
+  <div class="container">
+    <div class="reveal">
+      <div class="cs-num">WORKSTREAM 05</div>
+      <h2>Keyword-Matched Landing Pages</h2>
+      <p class="sub">Seven paid landing pages that rewrite their headline to match the search, in English and Spanish, with a form built to capture the lead before the visitor drops off.</p>
+    </div>
+    <div class="cs-cols">
+      <div class="reveal">
+        <div class="cs-block">
+          <h3>What I Built</h3>
+          <ul>
+            <li>7 dedicated pages: owner-financed land, land near Austin, near Fort Worth, near Brenham, a Spanish-language page written in Spanish from the start (not translated), and pages for two individual developments.</li>
+            <li><strong>About 150 pre-written headlines</strong> matched to the search keyword. A search for "owner financed land near me" lands on "Owner-Financed Land Near You". Only approved copy is shown; nothing from the URL is printed on the page.</li>
+            <li>A region layer re-sorts the property cards and changes the subhead and button for North Texas, Central Texas and Brazos Valley searches.</li>
+            <li>No navigation exits, kept out of search results, and a sticky call bar on mobile.</li>
+          </ul>
+        </div>
+        <div class="cs-block">
+          <h3>Form Design</h3>
+          <p>The first version asked for name and phone, then made everything else optional. 18 of the first 44 leads had no email, which cut off follow-up. I rebuilt all seven forms into three steps: name and phone (the lead is saved right away), then a required email, then optional property and timing. After the change, every new landing-page lead arrived with an email except one person who left at step two.</p>
+        </div>
+      </div>
+      <aside class="cs-results reveal">
+        <h4>Scope</h4>
+        <div class="r"><div class="big">7</div><div class="lbl">Paid landing pages, EN and ES</div></div>
+        <div class="r"><div class="big">~150</div><div class="lbl">Keyword-matched headlines</div></div>
+        <div class="r"><div class="big">3-step</div><div class="lbl">Form that saves the lead at step one</div></div>
+        <div class="cs-tags"><span>CRO</span><span>Dynamic Text Replacement</span><span>Multi-step Forms</span><span>Mobile-first</span></div>
+      </aside>
+    </div>
+    <div class="shot-pair reveal">
+      <figure><a href="assets/latierra/lp-desktop.jpg" target="_blank" rel="noopener"><img src="assets/latierra/lp-desktop.jpg" alt="Owner-financed land landing page with a keyword-matched headline and lead form" loading="lazy"></a><figcaption>Desktop · headline matched to "owner financed land near me"</figcaption></figure>
+      <figure><a href="assets/latierra/lp-mobile-es.jpg" target="_blank" rel="noopener"><img src="assets/latierra/lp-mobile-es.jpg" alt="Spanish landing page on mobile: Terrenos en Venta Cerca de Usted" loading="lazy"></a><figcaption>Spanish · mobile</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 06 CRM ===== -->
+<section class="cs-section" id="crm">
+  <div class="container">
+    <div class="reveal">
+      <div class="cs-num">WORKSTREAM 06</div>
+      <h2>Monday.com CRM Integration</h2>
+      <p class="sub">Every website and ad lead lands in the sales team's Monday.com board within seconds, tagged with where it came from, and screened for bots first.</p>
+    </div>
+    <div class="cs-cols">
+      <div class="reveal">
+        <div class="cs-block">
+          <h3>Lead Routing</h3>
+          <ul>
+            <li>A serverless function creates the Monday.com item and fills in source, language, contact details, the property of interest (matched against a whitelist of 24 property labels), and notes.</li>
+            <li>Added paid-attribution columns to the sales board: campaign, keyword, click ID, click date and the landing page the lead converted on. The sales team can see on each record exactly which search produced the lead.</li>
+            <li>Lead Source fills itself (Google Ads, Meta Ads, guide download or website), so the board stopped defaulting everything to "Website Inquiry".</li>
+            <li>Follow-up form steps add the email, property and timing to the same record as a note, so a lead is never split into duplicates.</li>
+          </ul>
+        </div>
+        <div class="cs-block">
+          <h3>Spam and Bot Filtering</h3>
+          <p>Built a server-side lead filter with seven checks (origin, user agent and country, a hidden honeypot field, submit time under 3 seconds, fake names, spam text, repeat bursts). Clean leads go through, suspicious ones are flagged for the team and kept out of Google Ads conversion data, and obvious bots are dropped. There is no captcha, so real buyers face no extra friction.</p>
+        </div>
+      </div>
+      <aside class="cs-results reveal">
+        <h4>Built</h4>
+        <div class="r"><div class="big">Seconds</div><div class="lbl">From form submit to CRM record</div></div>
+        <div class="r"><div class="big">5 columns</div><div class="lbl">Paid attribution on every lead</div></div>
+        <div class="r"><div class="big">7 checks</div><div class="lbl">Bot filtering, no captcha</div></div>
+        <div class="cs-tags"><span>Monday.com API</span><span>GraphQL</span><span>Netlify Functions</span><span>Lead Scoring</span><span>Spam Prevention</span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 07 REPORTING ===== -->
+<section class="cs-section" id="reporting">
+  <div class="container">
+    <div class="reveal">
+      <div class="cs-num">WORKSTREAM 07</div>
+      <h2>Funnel Reporting: From Click to Contract</h2>
+      <p class="sub">A weekly report for the client's leadership that follows every paid lead from click to contract, by reading the CRM call notes lead by lead.</p>
+    </div>
+    <div class="cs-cols">
+      <div class="reveal">
+        <div class="cs-block">
+          <h3>What It Shows</h3>
+          <ul>
+            <li>Spend and results by campaign from Google Ads, reconciled against the CRM so tracking gaps show up right away.</li>
+            <li>For every lead: was it called, was anyone reached, is the buyer still active, was a showing set, did it go to contract. Then the same breakdown by campaign and by keyword theme.</li>
+            <li>A short summary at the top with the decisions it supports: which campaigns to pause, where to move budget, which leads need a call today.</li>
+          </ul>
+        </div>
+        <div class="cs-block">
+          <h3>Insights It Surfaced</h3>
+          <ul>
+            <li><strong>Keyword intent beat volume.</strong> Owner-financing and named-area searches brought 18 leads and 6 of the 12 live prospects. A broad statewide term also brought 18 leads, but only 1 live prospect.</li>
+            <li><strong>Follow-up became the bottleneck.</strong> 99% of leads were called, but 48% were reached. Separating "No answer" from "Contacted" in the CRM became a recommendation.</li>
+            <li><strong>Inventory gaps.</strong> 13 reached buyers wanted areas with no current inventory, which pointed to where new properties would sell.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="cs-results reveal">
+        <h4>Funnel, Sep 17 – Oct 8</h4>
+        <div class="r"><div class="big">74</div><div class="lbl">Leads from Google Ads</div></div>
+        <div class="r"><div class="big">35</div><div class="lbl">Reached by the sales team</div></div>
+        <div class="r"><div class="big">3</div><div class="lbl">Showings set</div></div>
+        <div class="r"><div class="big">1</div><div class="lbl">Lot contract sent</div></div>
+        <div class="cs-tags"><span>Funnel Analysis</span><span>CRM Data</span><span>Executive Reporting</span><span>Budget Allocation</span></div>
+      </aside>
+    </div>
+    <div class="funnel-bars reveal" aria-label="Lead funnel from Google Ads, Sep 17 to Oct 8, 2026">
+      <div class="fb"><span>Leads</span><div class="track"><div class="fill" style="width:100%">74</div></div></div>
+      <div class="fb"><span>Called</span><div class="track"><div class="fill" style="width:98.6%">73</div></div></div>
+      <div class="fb"><span>Reached</span><div class="track"><div class="fill" style="width:47.3%">35</div></div></div>
+      <div class="fb"><span>Still active</span><div class="track"><div class="fill" style="width:16.2%">12</div></div></div>
+      <div class="fb"><span>Showing set</span><div class="track"><div class="fill gold" style="width:4.1%">3</div></div></div>
+      <div class="fb"><span>Contract sent</span><div class="track"><div class="fill gold" style="width:1.4%">1</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 08 SEO ===== -->
+<section class="cs-section" id="seo">
+  <div class="container">
+    <div class="reveal">
+      <div class="cs-num">WORKSTREAM 08</div>
+      <h2>SEO Content Program and Search Console</h2>
+      <p class="sub">A 40-post bilingual content program built to rank in Google and to be quoted by AI answer engines, published on a steady cadence and pushed into Google's index.</p>
+    </div>
+    <div class="cs-cols">
+      <div class="reveal">
+        <div class="cs-block">
+          <h3>Strategy</h3>
+          <ul>
+            <li>A keyword workbook: a 197-keyword master list, a page strategy map, location pages, a Spanish keyword set, a content calendar and 90-day priorities.</li>
+            <li>The second batch of 20 topics was chosen with real Keyword Planner volumes (for example "homestead exemption texas" at 12,100 monthly searches) and covers financing, land prices, buying guides and where-to-buy pages.</li>
+          </ul>
+        </div>
+        <div class="cs-block">
+          <h3>Built for Search and AI Answers</h3>
+          <ul>
+            <li>Every post is in English with a full Spanish version and carries Article, Organization and FAQ schema.</li>
+            <li>Each post had to pass an automated quality check before publishing: a direct 40–60 word answer up top, question-style subheads with short answers, at least 8 sourced statistics, quotes, a comparison table, 4–6 FAQs, and internal links that point only to live pages.</li>
+            <li>Content was drafted in parallel with AI writing agents and checked against the same rubric, which shortened a 20-post batch to two days.</li>
+          </ul>
+        </div>
+        <div class="cs-block">
+          <h3>Search Console</h3>
+          <p>Each new post goes into the sitemap and gets an indexing request in Google Search Console when it is published, so it reaches Google's priority crawl queue. Search Console showed 674 organic clicks from mid-August to early October and 49 pages indexed. One guide, on putting a mobile home on land, was flagged for a sharp jump in impressions.</p>
+        </div>
+      </div>
+      <aside class="cs-results reveal">
+        <h4>Program</h4>
+        <div class="r"><div class="big">40</div><div class="lbl">Posts planned, EN and ES</div></div>
+        <div class="r"><div class="big">26</div><div class="lbl">Live as of Oct 10, 2026</div></div>
+        <div class="r"><div class="big">674</div><div class="lbl">Organic clicks, mid-Aug to early Oct</div></div>
+        <div class="r"><div class="big">197</div><div class="lbl">Keywords mapped to pages</div></div>
+        <div class="cs-tags"><span>SEO</span><span>AEO / GEO</span><span>Search Console</span><span>Keyword Planner</span><span>Spanish SEO</span><span>Schema</span></div>
+      </aside>
+    </div>
+    <div class="cs-gallery reveal">
+      <figure><a href="assets/latierra/blog-index.jpg" target="_blank" rel="noopener"><img src="assets/latierra/blog-index.jpg" alt="Texas Land Guides blog index with category filters" loading="lazy"></a><figcaption>Blog index</figcaption></figure>
+      <figure><a href="assets/latierra/blog-post.jpg" target="_blank" rel="noopener"><img src="assets/latierra/blog-post.jpg" alt="Blog post: Land Loans in Texas" loading="lazy"></a><figcaption>Post · Land Loans in Texas</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 09 EMAIL ===== -->
+<section class="cs-section" id="email">
+  <div class="container">
+    <div class="reveal">
+      <div class="cs-num">WORKSTREAM 09</div>
+      <h2>Email Marketing: Realtor Acquisition Drip</h2>
+      <p class="sub">Opened a second channel for land supply: a 5-email campaign asking local real estate agents to bring La Tierra landowners who want to sell.</p>
+    </div>
+    <div class="cs-cols">
+      <div class="reveal">
+        <div class="cs-block">
+          <h3>What I Built</h3>
+          <ul>
+            <li>Confirmed the client's existing monday campaigns plan could run it and worked out the plan limits: automated workflows require Enterprise, so the drip is scheduled by date on the current plan.</li>
+            <li>Wrote and designed 5 emails over 6 weeks for a list of 86 agents: an introduction, what tracts qualify, local projects as proof, how a sale works for the agent's client, and a short personal last touch.</li>
+            <li>Delivered a build guide that maps each email block by block to the monday campaigns editor, with copy-ready text, brand colors, images and a send schedule.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="cs-results reveal">
+        <h4>Scope</h4>
+        <div class="r"><div class="big">5 emails</div><div class="lbl">Over 6 weeks</div></div>
+        <div class="r"><div class="big">86</div><div class="lbl">Local agents in the first audience</div></div>
+        <div class="cs-tags"><span>monday campaigns</span><span>B2B Email</span><span>Copywriting</span><span>Email Design</span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 10 SOCIAL ===== -->
+<section class="cs-section" id="social">
+  <div class="container">
+    <div class="reveal">
+      <div class="cs-num">WORKSTREAM 10</div>
+      <h2>Earlier Work: Meta Ads, Social and Video</h2>
+      <p class="sub">Before the rebuild, I ran La Tierra's marketing end to end on their original platform.</p>
+    </div>
+    <div class="cs-cols">
+      <div class="reveal">
+        <div class="cs-block">
+          <h3>What I Ran</h3>
+          <ul>
+            <li>Built the original Wix website with live available-property listings and refreshed the branding.</li>
+            <li>Launched and ran their social media: strategy, execution and content.</li>
+            <li>Ran Meta ads that drove 300 leads on $10K of spend.</li>
+            <li>Designed property videos and managed Monday.com email workflows.</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="cs-results reveal">
+        <h4>Results</h4>
+        <div class="r"><div class="big">300 leads</div><div class="lbl">From $10K of Meta spend</div></div>
+        <div class="cs-tags"><span>Meta Ads</span><span>Social Strategy</span><span>Video</span><span>Branding</span></div>
+        <a href="https://www.instagram.com/latierratx/" target="_blank" rel="noopener" class="btn btn-primary">↗ La Tierra on Instagram</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TIMELINE ===== -->
+<section class="cs-section" id="timeline">
+  <div class="container">
+    <div class="reveal">
+      <div class="cs-num">TIMELINE</div>
+      <h2>How It Came Together, 2026</h2>
+      <p class="sub">Key milestones from the website relaunch through the first contract.</p>
+    </div>
+    <div class="timeline reveal">
+      <div class="tl-item"><div class="when">Before Sep 2026</div><h3>New website and content plan</h3><ul><li>Coded, bilingual site built to replace Wix, with 123 old URLs mapped to 301 redirects.</li><li>First 20 SEO posts drafted from the keyword workbook.</li></ul></div>
+      <div class="tl-item"><div class="when">Sep 16</div><h3>Ads and CRM audit</h3><ul><li>253 Google Ads leads in the CRM, 0 ever qualified. Rebuild plan delivered.</li></ul></div>
+      <div class="tl-item"><div class="when">Sep 17</div><h3>New Google Ads program live</h3><ul><li>4 language and device campaigns, 68 ad groups, 198 negatives, keyword-matched landing pages.</li><li>GTM container, GA4 custom dimensions and key events, and the first offline conversion upload.</li></ul></div>
+      <div class="tl-item"><div class="when">Sep 18</div><h3>First results and server-side conversions</h3><ul><li>$11 per lead in the first two days, against $166 before.</li><li>"Qualified Lead (CRM)" conversion created; region-aware landing pages.</li></ul></div>
+      <div class="tl-item"><div class="when">Sep 22–24</div><h3>Property campaigns and live inventory</h3><ul><li>Pecan Peak Ranch campaigns and landing page; live lot availability synced from the CRM.</li></ul></div>
+      <div class="tl-item"><div class="when">Sep 25–26</div><h3>Content batch 2 and bot filtering</h3><ul><li>20 more bilingual posts written and checked against the quality rubric.</li><li>Server-side lead filter switched on.</li></ul></div>
+      <div class="tl-item"><div class="when">Oct 1</div><h3>First funnel report to leadership</h3><ul><li>Every paid lead followed from click to contract.</li></ul></div>
+      <div class="tl-item"><div class="when">Oct 2–4</div><h3>San Antonio test and 3-step forms</h3><ul><li>Eagle Ranch San Antonio campaign launched.</li><li>All 7 landing-page forms rebuilt so email is required at step two; landing page recorded on each CRM lead.</li></ul></div>
+      <div class="tl-item"><div class="when">Oct 8</div><h3>First contract from the new ads</h3><ul><li>First lot contract sent. The buyer came from Spanish mobile search.</li><li>74 leads at $19.43 each in the CRM. Realtor email drip built.</li></ul></div>
+      <div class="tl-item"><div class="when">Oct 9–10</div><h3>Publishing and indexing</h3><ul><li>Three more posts published and submitted for indexing in Search Console.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LESSONS ===== -->
+<section class="cs-section">
+  <div class="container">
+    <div class="reveal">
+      <div class="cs-num">WHAT I'D TELL ANOTHER TEAM</div>
+      <h2>Lessons From the Rebuild</h2>
+    </div>
+    <div class="lessons reveal">
+      <div class="lesson"><h4>Track to the CRM, not the thank-you page</h4><p>One blocked browser tag showed the browser-only setup was missing leads. Reporting conversions from the server, and sending CRM stages back to Google, gives bidding signals that match what the sales team sees.</p></div>
+      <div class="lesson"><h4>Split by language and device first</h4><p>Spanish mobile and Spanish desktop behaved like different businesses: about $10 per lead against $42. Without the split, the average would have hidden both.</p></div>
+      <div class="lesson"><h4>Report to the contract, not the lead</h4><p>Cost per lead said the campaigns were similar. Lead-by-lead CRM reading showed owner-financing searches produced half the live prospects, which changed where the budget went.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="section contact">
+  <div class="container">
+    <div class="contact-cta reveal" style="max-width:620px;margin:0 auto;">
+      <h3>Want the full picture?</h3>
+      <p>Download my resume or get in touch. I'm open to Director-level and senior growth leadership roles.</p>
+      <a href="assets/Christopher_Root_Resume.pdf" download class="btn btn-primary">Download Resume (PDF)</a>
+      <a href="index.html#contact" class="btn btn-ghost" style="border-color:rgba(255,255,255,.3);">Contact Me</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="index.html#top" class="brand"><span class="dot"></span> Christopher Root</a>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/christopher-root-53abb6142/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+      <a href="mailto:croot95@outlook.com" aria-label="Email">✉</a>
+    </div>
+    <small>© <span id="year"></span> Christopher Root · Denver, CO</small>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
